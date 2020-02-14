@@ -1,5 +1,12 @@
 import React from "react";
 import propsLogger from "../hoc/propsLogger";
+import passProps from "../hoc/passProps";
+
+const card = {
+  title: "Laptop1",
+  description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+  price: "26$"
+};
 
 const Card = ({ card: { title, description, price } }) => {
   return (
@@ -11,4 +18,5 @@ const Card = ({ card: { title, description, price } }) => {
   );
 };
 
-export default propsLogger(Card);
+// export default propsLogger(Card);
+export default passProps({ card })(Card);
